@@ -3,10 +3,11 @@ import './MyLearning.css';
 import {
     Box, Button, Flex, Text, Spinner
 } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import MylearningCard from '../../Components/MylearningCard';
 import { BsStopwatch } from 'react-icons/bs';
-import { color } from 'framer-motion';
+import { API } from '../../config/api';
+//import { color } from 'framer-motion';
 
 const MyLearningPage = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -26,7 +27,7 @@ const MyLearningPage = () => {
             // Assuming you might want to show a loading state while the request is in progress
             // setIsLoading(true);
           
-            fetch(`https://anxious-bull-glasses.cyclic.app/users/mylearning/${courseid}`, {
+            fetch(`http://localhost:8080/users/mylearning/${courseid}`, {
               method: 'DELETE',
               headers: {
                 'Content-Type': 'application/json',
@@ -66,24 +67,26 @@ const MyLearningPage = () => {
     
 
     const fetchData = async () => {
-        try {
+        
             setIsLoading(true);
-            const res = await fetch('https://anxious-bull-glasses.cyclic.app/users/mylearning', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    authorization: `Bearer ${localStorage.getItem('frontendtoken')}`
-                },
-            });
-            const data = await res.json();
+             API( {
+                 url:"/users/mylearning",
+                 method: 'GET',
+                // headers: {
+                //     'Content-Type': 'application/json',
+                //     authorization: `Bearer ${localStorage.getItem('frontendtoken')}`
+                // },
+            }).then((res)=>{
+            const data =  res.data;
             console.log(data)
             setLearningData(data);
             setIsLoading(false);
-        } catch (error) {
+            })
+         .catch (error=> {
             console.log(error);
             setIsError(true);
             setIsLoading(false);
-        }
+        })
     };
 
     useEffect(() => {

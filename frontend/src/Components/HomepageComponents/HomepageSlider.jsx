@@ -10,7 +10,7 @@ const HomepageSlider = () => {
 
   useEffect(() => {
     // const url = "https://64ba6f8d5e0670a501d628f4.mockapi.io/skillhub";
-    const url = `https://anxious-bull-glasses.cyclic.app/course`;
+    const url = `http://localhost:8080/course`;
 
     fetch(url)
       .then((response) => {

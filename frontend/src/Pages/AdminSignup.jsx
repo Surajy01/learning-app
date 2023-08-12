@@ -83,7 +83,7 @@ export const AdminSignup = () => {
 
     //.post("http://localhost:8080/admin/register", payload)
     axios
-      .post("https://anxious-bull-glasses.cyclic.app/admin/register", payload)
+      .post("http://localhost:8080/admin/register", payload)
       .then((res) => {
         //alert(res.data.msg);
         if (res.data.msg === "Registration Successful") {

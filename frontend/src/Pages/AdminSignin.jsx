@@ -81,7 +81,7 @@ export const AdminSignin = () => {
     //.post("http://localhost:8080/admin/login", payload)
 
     axios
-      .post("https://anxious-bull-glasses.cyclic.app/admin/login", payload)
+      .post("http://localhost:8080/admin/login", payload)
       .then((res) => {
         //alert(res.data.msg);
         localStorage.setItem("adminToken", res.data.adminToken);

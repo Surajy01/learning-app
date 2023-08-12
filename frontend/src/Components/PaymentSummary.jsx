@@ -34,7 +34,7 @@ export const PaymentSummary = () => {
 
   const addToLearning = () => {
     // localStorage.setItem("cart", course.price);
-    fetch(`https://anxious-bull-glasses.cyclic.app/users/mylearning/${_id}`, {
+    fetch(`http://localhost:8080/users/mylearning/${_id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

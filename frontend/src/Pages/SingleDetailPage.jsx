@@ -76,7 +76,7 @@ export const SingleDetailPage = () => {
   useEffect(() => {
     //fetch(`http://localhost:8080/course/singleProductPage/${courseId}`, {
     fetch(
-      `https://anxious-bull-glasses.cyclic.app/course/singleProductPage/${courseId}`,
+      `http://localhost:8080/course/singleProductPage/${courseId}`,
       {
         method: "GET",
         headers: {
@@ -94,7 +94,7 @@ export const SingleDetailPage = () => {
   const addToCart = () => {
   // localStorage.setItem("cart", course.price);
   fetch(
-    `https://anxious-bull-glasses.cyclic.app/users/cart/${courseId}`,
+    `http://localhost:8080/users/cart/${courseId}`,
     {
       method: "PATCH",
       headers: {

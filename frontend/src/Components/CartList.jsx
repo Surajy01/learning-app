@@ -32,7 +32,7 @@ export const CartList = ({
   duration,
 }) => {
   const dispatch = useDispatch();
-  const toast = useToast();
+  //const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const handleDelete = (_id) => {
     dispatch(deleteCart(_id)).then((res) => {

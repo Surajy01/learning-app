@@ -9,7 +9,7 @@ import {AiOutlineSetting, AiOutlineMail, AiOutlineRead} from "react-icons/ai"
 import {BiSupport} from "react-icons/bi"
 import {BsFillPenFill} from "react-icons/bs"
 import logo from "./skillhub.png"
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 export const Sidebar = () => {
   const [navSize,setNavSize]=useState("large")
   return (

@@ -13,7 +13,7 @@ const [users,setUsers]=useState([])
 
 const getdata=async()=>{
     try{
-        let res=await axios.get("https://anxious-bull-glasses.cyclic.app/adminuser",{
+        let res=await axios.get("http://localhost:8080/adminuser",{
           headers:{
             "Content-Type":'application/json',
             authorization: `Bearer ${localStorage.getItem("adminToken")}`

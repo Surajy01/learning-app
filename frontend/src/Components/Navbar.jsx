@@ -15,7 +15,7 @@ import { useNavigate } from "react-router";
 import CustomSelect from "./NavbarComponents/CustomSelect";
 import SearchbarCard from "./LandingPageComponents/SearchbarCard";
 import { useSelector } from "react-redux";
-
+ 
 export const Navbar = () => {
   const isMobile = useBreakpointValue({ base: true, lg: false });
   const navigate = useNavigate();
@@ -44,7 +44,7 @@ export const Navbar = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `https://anxious-bull-glasses.cyclic.app/course?search=${encodeURIComponent(
+        `http://localhost:8080/course?search=${encodeURIComponent(
           searchQuery
         )}`
       );
@@ -163,7 +163,7 @@ export const Navbar = () => {
           <Box mr={4}>
             <Link
               _hover={{ color: "#a435f0", textDecoration: "underline" }}
-              href="/enterprise"
+              onClick={()=>{navigate("/enterprise")}}
               fontSize={fontSize}
             >
               Skill Hub Business
@@ -172,7 +172,7 @@ export const Navbar = () => {
           <Box mr={4}>
             <Link
               _hover={{ color: "#a435f0", textDecoration: "underline" }}
-              href="/universities"
+              onClick={()=>{navigate("/universities")}}
               fontSize={fontSize}
             >
               Teach on Skill Hub
@@ -182,7 +182,7 @@ export const Navbar = () => {
             <Link
               textDecoration="none"
               color="#a435f0"
-              href="/cart"
+              onClick={()=>{navigate("/cart")}}
               fontSize={fontSize}
             >
               <AiOutlineShoppingCart size='30px'/><Box
@@ -207,7 +207,8 @@ export const Navbar = () => {
 
           {token ? (
             <>
-            <Link href="/mylearning"
+            <Link 
+              onClick={()=>{navigate("/mylearning")}}
               textDecoration="none"
               marginRight="10px"
               padding="10px"
@@ -246,7 +247,7 @@ export const Navbar = () => {
           ) : (
             <Box display={"flex"}>
               <Link
-                href="/signin"
+                onClick={()=>{navigate("/signin")}}
                 textDecoration="none"
                 marginRight="10px"
                 padding="10px"
@@ -275,7 +276,7 @@ export const Navbar = () => {
                   color: "#9904fc",
                   border: "2px solid #9904fc",
                 }}
-                href="/signup"
+                onClick={()=>{navigate("/signup")}}
                 p={"10px 7px"}
                 fontSize={fontSize}
               >

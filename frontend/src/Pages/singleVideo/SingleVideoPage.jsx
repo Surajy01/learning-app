@@ -26,7 +26,7 @@ export const SingleVideoPage = () => {
     try {
       setIsLoading(true);
   
-      const res = await fetch(`https://anxious-bull-glasses.cyclic.app/users/mylearning/singleVideoPage/${id}`, {
+      const res = await fetch(`http://localhost:8080/users/mylearning/singleVideoPage/${id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

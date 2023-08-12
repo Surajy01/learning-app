@@ -1,5 +1,5 @@
 import { Button, Box, Text } from '@chakra-ui/react';
-import { color } from 'framer-motion';
+//import { color } from 'framer-motion';
 import React from 'react'
 import { GoVideo } from 'react-icons/go';
 

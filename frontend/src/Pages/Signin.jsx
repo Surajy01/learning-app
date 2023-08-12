@@ -19,6 +19,7 @@ import {
 import axios from "axios";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { API } from "../config/api";
 
 export const Signin = () => {
   const [email, setEmail] = useState("");
@@ -80,8 +81,8 @@ export const Signin = () => {
     //.post(`${process.env.REACT_APP_SERVER}/users/login`, payload)
    // .post("http://localhost:8080/users/login", payload)
 
-    axios
-      .post("https://anxious-bull-glasses.cyclic.app/users/login", payload)
+    API
+      .post("/users/login", payload)
       .then((res) => {
         //alert(res.data.msg);
         localStorage.setItem("frontendtoken", res.data.token);

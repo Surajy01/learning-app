@@ -12,7 +12,7 @@ export const getcart = (dispatch) => {
   dispatch({ type: CART_REQUEST });
   axios({
     method: "get",
-    url: "https://anxious-bull-glasses.cyclic.app/users/cart/",
+    url: "http://localhost:8080/users/cart/",
     headers: {
       authorization: `Bearer ${localStorage.getItem("frontendtoken")}`,
     },
@@ -32,7 +32,7 @@ export const deleteCart = (_id) => (dispatch) => {
   dispatch({ type: CART_REQUEST });
   return axios({
     method: "delete",
-    url: `https://anxious-bull-glasses.cyclic.app/users/cart/${_id}`,
+    url: `http://localhost:8080/users/cart/${_id}`,
     headers: {
       authorization: `Bearer ${localStorage.getItem("frontendtoken")}`,
     },
@@ -53,7 +53,7 @@ export const addPayment = (_id, data) => (dispatch) => {
   axios({
     method: "patch",
 
-    url: `https://anxious-bull-glasses.cyclic.app/users/cart/payment/${_id}`,
+    url: `http://localhost:8080/users/cart/payment/${_id}`,
     data: { payment: data },
     headers: {
       "Content-Type": "application/json",

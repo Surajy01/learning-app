@@ -15,7 +15,7 @@ import {
 import { useNavigate, useLocation } from "react-router-dom";
 import Card from "../LandingPageComponents/Card";
 import MessageDisplay from "./MessageDisplay";
-import HomepageSlider from "./HomepageSlider";
+// import HomepageSlider from "./HomepageSlider";
 
 const Sidebar = () => {
   const [categoryFilters, setCategoryFilters] = useState({
@@ -140,7 +140,7 @@ const Sidebar = () => {
 
     const queryString = queryParams.toString();
 
-    let url = `https://anxious-bull-glasses.cyclic.app/course?${queryString}`;
+    let url = `http://localhost:8080/course?${queryString}`;
 
     fetch(url)
       .then((response) => {
@@ -220,7 +220,7 @@ const Sidebar = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `https://anxious-bull-glasses.cyclic.app/course?search=${searchQuery}`
+        `http://localhost:8080/course?search=${searchQuery}`
       );
       const data = await response.json();
       console.log(data.course)

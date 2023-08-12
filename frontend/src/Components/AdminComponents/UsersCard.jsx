@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 export const UsersCard = ({email,gender,mylearning,name,phone,cart,_id,ind}) => {

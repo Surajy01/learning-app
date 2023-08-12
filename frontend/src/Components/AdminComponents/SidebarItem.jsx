@@ -28,11 +28,6 @@ export const SidebarItem = ({navSize,title,icon,active,link}) => {
             </Flex>
         </MenuButton>
         </Link>
-
-
-
-
-        
         
         </Menu>     
 

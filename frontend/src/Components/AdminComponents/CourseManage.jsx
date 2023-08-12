@@ -13,7 +13,7 @@ const [data,setData]=useState([])
 
 const handleabc=(id)=>{
 
-  fetch(`https://anxious-bull-glasses.cyclic.app/admincourse/delete/${id}`, {
+  fetch(`http://localhost:8080/admincourse/delete/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ const handleabc=(id)=>{
 
 const getdata=async()=>{
     try{
-        let res=await axios.get("https://anxious-bull-glasses.cyclic.app/admincourse",{
+        let res=await axios.get("http://localhost:8080/admincourse",{
            headers:{
             "Content-Type":'application/json',
             authorization: `Bearer ${localStorage.getItem("adminToken")}`
